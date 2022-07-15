@@ -3,9 +3,11 @@
 import cv2
 import requests # Used to call most Hive APIs
 #import threading
+import json
 
 base_sync = 'https://api.thehive.ai/api/v2/task/sync'
-vis_API_Key = 'UIF3trowKdiiZR8h0ixB4SlQ2fZk9yR2'
+sectrect_json = json.load(open("SECRETS.json"))
+vis_API_Key = sectrect_json['vis_API_Key']
 vis_threshold = 0.7 # Confidence score threshold
 banned_classes = ['knife_in_hand']#, 'yes_middle_finger']
 # A selection of classes to moderate from the hypothetical model response shown above.
